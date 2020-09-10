@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpForce;
     [SerializeField]
+    private float minVertSpeed;
+    [SerializeField]
+    private float fallMultiplier;
+    [SerializeField]
     private float groundedHeight;
     [SerializeField]
     private LayerMask ground;
@@ -63,6 +67,15 @@ public class PlayerMovement : MonoBehaviour
         if (Physics2D.OverlapCircle(groundPoint.position, groundedHeight, ground))
         {
             if (inputManager.player.Jump.triggered) { Jump(); }
+        }
+    }
+
+
+    void MultiplyFall()
+    {
+        if (rb.velocity.y < minVertSpeed)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
     }
 }

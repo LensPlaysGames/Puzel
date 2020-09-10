@@ -44,6 +44,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0bd460dc-f289-4b7f-a79e-d0042a100d64",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kb & M",
+                    "action": "selectRedPlayer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e2bd4fe0-919c-4370-8ce5-60e22d768507",
                     "path": "<Keyboard>/2",
                     "interactions": "",
@@ -55,8 +66,30 @@
                 },
                 {
                     "name": "",
+                    "id": "d6ee86c7-470c-4fd2-bb86-986a1e115543",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kb & M",
+                    "action": "selectGreenPlayer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6807ad0e-e2bb-49fb-94d3-40fb90019f99",
                     "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kb & M",
+                    "action": "selectBluePlayer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e78d0700-ea47-452f-8d72-2af82967190a",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "Kb & M",

@@ -41,6 +41,9 @@ public class PlayerManager : MonoBehaviour
 
     #endregion
 
+    public delegate void SelectedPlayerVisualEvent(string str);
+    public SelectedPlayerVisualEvent updateSelectedPlayer;
+
     private PlayerMovement redPlayer, greenPlayer, bluePlayer;
 
     void Start()
@@ -52,6 +55,8 @@ public class PlayerManager : MonoBehaviour
         redPlayer.enabled = true;
         greenPlayer.enabled = false;
         bluePlayer.enabled = false;
+
+        updateSelectedPlayer?.Invoke("red");
     }
 
     void Update()
@@ -61,18 +66,24 @@ public class PlayerManager : MonoBehaviour
             redPlayer.enabled = true;
             greenPlayer.enabled = false;
             bluePlayer.enabled = false;
+
+            updateSelectedPlayer?.Invoke("red");
         }
         if (inputManager.playerSwitch.selectGreenPlayer.triggered)
         {
             redPlayer.enabled = false;
             greenPlayer.enabled = true;
-            bluePlayer.enabled = false;   
+            bluePlayer.enabled = false;
+
+            updateSelectedPlayer?.Invoke("green");
         }
         if (inputManager.playerSwitch.selectBluePlayer.triggered)
         {
             redPlayer.enabled = false;
             greenPlayer.enabled = false;
             bluePlayer.enabled = true;
+
+            updateSelectedPlayer?.Invoke("blue");
         }
     }
 }
