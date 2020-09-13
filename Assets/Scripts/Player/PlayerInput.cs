@@ -24,29 +24,33 @@ public class PlayerInput : MonoBehaviour
 
     #endregion
 
-    private void Update()
-    {
-        GetInput();
-    }
+    IPlayerMove player;
 
     [Range(.1f, 36f)]
     public float playerSpeed = 9f;
     [Range(.1f, 36f)]
     public float jumpForce = 9f;
 
-    public Transform groundPoint;
-
     [Range(0.1f, 1.8f)]
     public float groundDist = .27f;
     public LayerMask ground;
 
+    Transform groundPoint;
+
+    private void Start()
+    {
+        player = GetComponent<IPlayerMove>();
+        groundPoint = transform.Find("GroundCheck");
+    }
+    private void Update()
+    {
+        GetInput();
+    }
+
     public void GetInput()
     {
-        Debug.Log("Getting Input!");
-
-        IPlayerMove player = GetComponent<IPlayerMove>();
-
-        player.Move(GetMovement(), playerSpeed);
+        Vector3 input = GetMovement();
+        player.Move(input, playerSpeed);
 
         if (Physics2D.OverlapCircle(groundPoint.position, groundDist, ground)) 
         { 

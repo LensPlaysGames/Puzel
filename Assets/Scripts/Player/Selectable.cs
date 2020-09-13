@@ -8,7 +8,7 @@ namespace U_Puzel
         public string selectID;
         public List<Behaviour> toggles;
 
-        public void Toggle(List<Behaviour> toggles, bool onOff)
+        public void Toggle(bool onOff)
         {
             for (int t = 0; t < toggles.Count; t++)
             {
