@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class GameReferences : MonoBehaviour
+namespace U_Puzel
 {
-    public static PlayerManager playerManager;
-    public static GameObject redPlayer, greenPlayer, bluePlayer;
+    public class GameReferences : MonoBehaviour
+    {
 
-    public static GameObject vCamRed, vCamGreen, vCamBlue;
+    }
 }

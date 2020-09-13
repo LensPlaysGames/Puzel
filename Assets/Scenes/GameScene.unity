@@ -424,7 +424,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 231601840}
-  - component: {fileID: 231601844}
   - component: {fileID: 231601839}
   - component: {fileID: 231601843}
   - component: {fileID: 231601842}
@@ -512,17 +511,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 231601838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c671b1cd96f9fb44e85645f2d281d238, type: 3}
+  m_Script: {fileID: 11500000, guid: 74a1cc2463c77f345a1aecb948a22615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 9
-  jumpForce: 9
-  minVertSpeed: 5
-  fallMultiplier: 2.5
-  groundedHeight: 0.2
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
+  selectID: blue
+  toggles: []
 --- !u!58 &231601842
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -560,18 +553,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &231601844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231601838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7c4b824783104489cc1f3593759119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &282731784
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +592,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340967114}
-  - component: {fileID: 340967115}
   - component: {fileID: 340967113}
   m_Layer: 0
   m_Name: CM vcam blue
@@ -670,18 +650,6 @@ Transform:
   m_Father: {fileID: 970409692}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &340967115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340967112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac65aa7e4bd2ebc4e8013d068a81eb73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &364067404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,11 +1019,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563807050}
-  - component: {fileID: 563807054}
   - component: {fileID: 563807049}
   - component: {fileID: 563807053}
   - component: {fileID: 563807052}
   - component: {fileID: 563807051}
+  - component: {fileID: 563807054}
+  - component: {fileID: 563807055}
   m_Layer: 0
   m_Name: PlayerRed
   m_TagString: Player
@@ -1139,17 +1108,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 563807048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c671b1cd96f9fb44e85645f2d281d238, type: 3}
+  m_Script: {fileID: 11500000, guid: 74a1cc2463c77f345a1aecb948a22615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 9
-  jumpForce: 9
-  minVertSpeed: 5
-  fallMultiplier: 2.5
-  groundedHeight: 0.2
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
+  selectID: red
+  toggles:
+  - {fileID: 563807054}
+  - {fileID: 563807055}
 --- !u!58 &563807052
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1196,9 +1161,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 563807048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90318aee2d51d9e408a519a4f58a0e98, type: 3}
+  m_Script: {fileID: 11500000, guid: 39bb31dda5d9dbe46b93ff01f57a0e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpeed: 1
+  jumpForce: 1.7
+  groundPoint: {fileID: 538519499}
+  groundDist: 0.27
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &563807055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563807048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4940a249f9ad945b9ac54ef5ca55c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &585557517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1653,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1200756053}
-  - component: {fileID: 1200756054}
   - component: {fileID: 1200756052}
   m_Layer: 0
   m_Name: CM vcam red
@@ -1727,18 +1711,6 @@ Transform:
   m_Father: {fileID: 970409692}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1200756054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200756051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 203a5450ff67bd340b1986d7f9ae8cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1221412097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1792,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1289398592}
-  - component: {fileID: 1289398593}
   - component: {fileID: 1289398591}
   m_Layer: 0
   m_Name: CM vcam green
@@ -1879,18 +1850,6 @@ Transform:
   m_Father: {fileID: 970409692}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289398593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289398590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d95eb54583c9a449980b2946e931ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1345601377
 GameObject:
   m_ObjectHideFlags: 3
@@ -1978,65 +1937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1382659712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1382659713}
-  - component: {fileID: 1382659714}
-  - component: {fileID: 1382659715}
-  m_Layer: 0
-  m_Name: --PlayerManager--
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1382659713
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382659712}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1981020087}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1382659714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382659712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a2be7f4b16f484582c829e6265506b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1382659715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382659712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90bb519426523a5468ffdb4c2e18e919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
-  selected: {r: 1, g: 1, b: 1, a: 1}
-  darkened: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
 --- !u!1 &1552033322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +1985,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1576039706}
-  - component: {fileID: 1576039710}
   - component: {fileID: 1576039705}
   - component: {fileID: 1576039709}
   - component: {fileID: 1576039708}
@@ -2173,17 +2072,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576039704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c671b1cd96f9fb44e85645f2d281d238, type: 3}
+  m_Script: {fileID: 11500000, guid: 74a1cc2463c77f345a1aecb948a22615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 9
-  jumpForce: 9
-  minVertSpeed: 5
-  fallMultiplier: 2.5
-  groundedHeight: 0.2
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
+  selectID: green
+  toggles: []
 --- !u!58 &1576039708
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2221,18 +2114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1576039710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576039704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00cd8d55d9b36ac45b89a8d05b4d9d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1619959258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2262,6 @@ GameObject:
   - component: {fileID: 1691487397}
   - component: {fileID: 1691487396}
   - component: {fileID: 1691487399}
-  - component: {fileID: 1691487400}
   - component: {fileID: 1691487401}
   m_Layer: 0
   m_Name: Main Camera
@@ -2489,19 +2369,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1691487400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691487395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59eeecc9fdcf58144a6dd2eb27191deb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
 --- !u!114 &1691487401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3084,8 +2951,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1382659713}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
