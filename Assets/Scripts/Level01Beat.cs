@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace U_Puzel
@@ -15,18 +14,14 @@ namespace U_Puzel
 
         public void OnLevelBeat(bool b)
         {
-            if (b)
-            {
-                OpenDoors();
-            }
-            else
-            {
-                CloseDoors();
-            }
+            if (b) { OpenDoors(); }
+            else { CloseDoors(); }
         }
 
         private void OpenDoors()
         {
+            LevelAudioManager.instance.PlaySound("DoorOpen");
+
             for (int d = 0; d < doors.Count; d++)
             {
                 doors[d].GetComponent<Animator>().Play("Open");

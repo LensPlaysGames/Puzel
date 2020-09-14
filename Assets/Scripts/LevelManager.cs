@@ -7,6 +7,7 @@ namespace U_Puzel
     public class LevelManager : MonoBehaviour
     {
         public List<bool> buttons;
+        private bool levelBeat = false;
 
         public delegate void LevelEvent(bool b);
         public LevelEvent beatLevel;
@@ -24,9 +25,21 @@ namespace U_Puzel
 
         private void FixedUpdate()
         {
-            if (buttons.All(x => x == true))
+            if (!levelBeat)
             {
-                beatLevel?.Invoke(true);
+                if (buttons.All(x => x == true))
+                {
+                    beatLevel?.Invoke(true);
+                    levelBeat = true;
+                }
+            }
+            else if (levelBeat)
+            {
+                if (!buttons.All(x => x == true))
+                {
+                    beatLevel?.Invoke(false);
+                    levelBeat = false;
+                } 
             }
         }
 

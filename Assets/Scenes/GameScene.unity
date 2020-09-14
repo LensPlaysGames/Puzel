@@ -3018,6 +3018,7 @@ GameObject:
   - component: {fileID: 1351623428}
   - component: {fileID: 1351623429}
   - component: {fileID: 1351623430}
+  - component: {fileID: 1351623431}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -3066,6 +3067,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doors:
   - {fileID: 236451321}
+--- !u!114 &1351623431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351623427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e24a4f56ee08a34c8c800c214eb7a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: DoorOpen
+    clip: {fileID: 8300000, guid: f573ce26876993047a896314a46db7af, type: 3}
+    mixerGroup: {fileID: 6948029290528463679, guid: 4f3c876a1d89a3b48b205b5869dd5c4f, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1429806870
 GameObject:
   m_ObjectHideFlags: 0
