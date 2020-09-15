@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using U_Puzel;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SelectionInput : MonoBehaviour
 {
@@ -14,7 +11,7 @@ public class SelectionInput : MonoBehaviour
     {
         if (instance != null) { Debug.LogError("WTF RYLAN THERES MULTIPLE SELECTION INPUTS!! I MEAN COME ON..."); Destroy(this); }
         else { instance = this; }
-        
+
         inputs = new InputManager();
     }
     private void OnEnable()
@@ -31,21 +28,25 @@ public class SelectionInput : MonoBehaviour
     public delegate void SelectionEvent(string selectID);
     public SelectionEvent selectionChangedEvent;
 
+    public string defaultSelection = "red";
+    private void Start()
+    {
+        selectionChangedEvent?.Invoke(defaultSelection);
+    }
+
     private void Update()
     {
         if (inputs.playerSwitch.selectRedPlayer.triggered)
         {
-            Debug.Log("Calling Player Switched Event!");
-            selectionChangedEvent("red");
+            selectionChangedEvent?.Invoke("red");
         }
         else if (inputs.playerSwitch.selectGreenPlayer.triggered)
         {
-            Debug.Log("Calling Player Switched Event!");
-            selectionChangedEvent("green");
+            selectionChangedEvent?.Invoke("green");
         }
         else if (inputs.playerSwitch.selectBluePlayer.triggered)
         {
-            selectionChangedEvent("blue");
+            selectionChangedEvent?.Invoke("blue");
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace U_Puzel
-{ 
+{
     public class Button : MonoBehaviour, IInteractOnCollide
     {
         public int number;

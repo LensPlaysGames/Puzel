@@ -37,7 +37,7 @@ namespace U_Puzel
         public void PlaySound(string sound)
         {
             Sound snd = sounds.Find(s => s.name == sound);
-            if(snd != null) { snd.source.Play(); }
+            if (snd != null) { snd.source.Play(); }
             else { Debug.LogWarning("Sound " + sound + " Was Not Found"); }
         }
     }

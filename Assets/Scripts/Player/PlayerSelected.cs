@@ -11,15 +11,14 @@ namespace U_Puzel
         private void Awake()
         {
             players = FindObjectsOfType<Selectable>().ToList();
-        }
-        private void Start()
-        {
+
             // Subscribe to Selection Input Event
             if (SelectionInput.instance != null)
             {
                 SelectionInput.instance.selectionChangedEvent += SelectPlayer;
             }
         }
+
         public void FindPlayers()
         {
             players = FindObjectsOfType<Selectable>().ToList();

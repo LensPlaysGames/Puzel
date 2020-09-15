@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace U_Puzel
 {
+    [RequireComponent(typeof(ILevelConditions))]
     public class LevelManager : MonoBehaviour
     {
-        public List<bool> buttons;
         private bool levelBeat = false;
 
         public delegate void LevelEvent(bool b);
@@ -14,20 +12,14 @@ namespace U_Puzel
 
         private void Start()
         {
-            Button[] b = FindObjectsOfType<Button>();
-            for (int btn = 0; btn < b.Length; btn++)
-            {
-                b[btn].SetButtonNumber(btn);
-                b[btn].buttonEvent += SetButton;
-                buttons.Add(b[btn].pressed);
-            }
+            GetComponent<ILevelConditions>().levelConditionsMet += LevelBeat;
         }
 
-        private void FixedUpdate()
+        void LevelBeat(bool b)
         {
             if (!levelBeat)
             {
-                if (buttons.All(x => x == true))
+                if (b)
                 {
                     beatLevel?.Invoke(true);
                     levelBeat = true;
@@ -35,17 +27,12 @@ namespace U_Puzel
             }
             else if (levelBeat)
             {
-                if (!buttons.All(x => x == true))
+                if (!b)
                 {
                     beatLevel?.Invoke(false);
                     levelBeat = false;
-                } 
+                }
             }
-        }
-
-        void SetButton(int buttonIndex, bool buttonState)
-        {
-            buttons[buttonIndex] = buttonState;
         }
     }
 }
