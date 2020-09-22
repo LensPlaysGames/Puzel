@@ -1,4 +1,4 @@
-﻿namespace U_Puzel
+﻿namespace LensorRadii.U_Puzel
 {
     public class CamSelectable : Selectable { }
 }

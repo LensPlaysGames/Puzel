@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace U_Puzel
+namespace LensorRadii.U_Puzel
 {
     public class Button : MonoBehaviour, IInteractOnCollide
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace U_Puzel
+namespace LensorRadii.U_Puzel
 {
     [RequireComponent(typeof(ILevelConditions))]
     public class LevelManager : MonoBehaviour

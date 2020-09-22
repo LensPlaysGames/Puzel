@@ -1,52 +1,55 @@
 ﻿using UnityEngine;
 
-public class SelectionInput : MonoBehaviour
+namespace LensorRadii.U_Puzel
 {
-    #region Input/Init
-
-    public static SelectionInput instance;
-    InputManager inputs;
-
-    private void Awake()
+    public class SelectionInput : MonoBehaviour
     {
-        if (instance != null) { Debug.LogError("WTF RYLAN THERES MULTIPLE SELECTION INPUTS!! I MEAN COME ON..."); Destroy(this); }
-        else { instance = this; }
+        #region Input/Init
 
-        inputs = new InputManager();
-    }
-    private void OnEnable()
-    {
-        inputs.Enable();
-    }
-    private void OnDisable()
-    {
-        inputs.Disable();
-    }
+        public static SelectionInput instance;
+        InputManager inputs;
 
-    #endregion
-
-    public delegate void SelectionEvent(string selectID);
-    public SelectionEvent selectionChangedEvent;
-
-    public string defaultSelection = "red";
-    private void Start()
-    {
-        selectionChangedEvent?.Invoke(defaultSelection);
-    }
-
-    private void Update()
-    {
-        if (inputs.playerSwitch.selectRedPlayer.triggered)
+        private void Awake()
         {
-            selectionChangedEvent?.Invoke("red");
+            if (instance != null) { Debug.LogError("WTF RYLAN THERES MULTIPLE SELECTION INPUTS!! I MEAN COME ON..."); Destroy(this); }
+            else { instance = this; }
+
+            inputs = new InputManager();
         }
-        else if (inputs.playerSwitch.selectGreenPlayer.triggered)
+        private void OnEnable()
         {
-            selectionChangedEvent?.Invoke("green");
+            inputs.Enable();
         }
-        else if (inputs.playerSwitch.selectBluePlayer.triggered)
+        private void OnDisable()
         {
-            selectionChangedEvent?.Invoke("blue");
+            inputs.Disable();
+        }
+
+        #endregion
+
+        public delegate void SelectionEvent(string selectID);
+        public SelectionEvent selectionChangedEvent;
+
+        public string defaultSelection = "red";
+        private void Start()
+        {
+            selectionChangedEvent?.Invoke(defaultSelection);
+        }
+
+        private void Update()
+        {
+            if (inputs.playerSwitch.selectRedPlayer.triggered)
+            {
+                selectionChangedEvent?.Invoke("red");
+            }
+            else if (inputs.playerSwitch.selectGreenPlayer.triggered)
+            {
+                selectionChangedEvent?.Invoke("green");
+            }
+            else if (inputs.playerSwitch.selectBluePlayer.triggered)
+            {
+                selectionChangedEvent?.Invoke("blue");
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace U_Puzel
+namespace LensorRadii.U_Puzel
 {
     [Serializable]
     public class Sound

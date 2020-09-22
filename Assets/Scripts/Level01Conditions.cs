@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace U_Puzel
+namespace LensorRadii.U_Puzel
 {
     public class Level01Conditions : MonoBehaviour, ILevelConditions
     {

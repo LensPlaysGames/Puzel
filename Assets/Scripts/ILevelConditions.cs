@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace U_Puzel
+namespace LensorRadii.U_Puzel
 {
     public interface ILevelConditions
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace U_Puzel
+namespace LensorRadii.U_Puzel
 {
     public class PlayerSelected : MonoBehaviour
     {
